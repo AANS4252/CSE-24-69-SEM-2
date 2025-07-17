@@ -249,6 +249,208 @@ int main() {
 }
 
 
+//Array
+
+//Display contents of an integer array. 
+
+#include <stdio.h>
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};  
+    int n = sizeof(arr) / sizeof(arr[0]);  
+    printf("Array elements are:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]); 
+    }
+    return 0;
+    }
+
+
+
+    
+
+
+//Input an integer array from the user and display the same. 
+
+#include <stdio.h>
+int main() {
+    int arr[100], n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);  // User inputs how many integers they want to store
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);  // Read each integer into the array
+    }
+        printf("Array elements are:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);  // Display each element
+    }
+    return 0;
+}
+
+
+
+//Display contents of an integer array in reverse order.
+
+#include <stdio.h>
+int main() {
+    int arr[100], n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+  
+  printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Array in reverse order:\n");
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+
+
+
+//Display contents of a character array. 
+
+#include <stdio.h>
+
+int main() {
+    char arr[] = {'H', 'e', 'l', 'l', 'o', '\0'};  // Character array with null terminator
+    printf("Character array content: %s\n", arr);
+
+    return 0;
+}
+
+
+
+//Input a string from the user and display the same. 
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);  // Read string input (no spaces)
+
+    printf("You entered: %s\n", str);
+
+    return 0;
+}  
+
+
+{OR}
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // Reads entire line including spaces
+
+    printf("You entered: %s", str);
+
+    return 0;
+  }
+
+
+
+
+//Input a string from the user and find its length (without using the string library).
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // Read string with spaces
+
+    // Manually calculate length (excluding '\0')
+    while (str[length] != '\0') {
+        if (str[length] == '\n') {
+            break;  // Stop at newline (from Enter key)
+        }
+        length++;
+    }
+
+    printf("Length of the string: %d\n", length);
+
+    return 0;
+}
+
+
+
+
+//Input a string from the user and display it in reverse order.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove newline character if present
+    str[strcspn(str, "\n")] = '\0';
+
+    // Calculate length manually
+    while (str[length] != '\0') {
+        length++;
+    }
+
+    printf("Reversed string: ");
+    for (int i = length - 1; i >= 0; i--) {
+        printf("%c", str[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+
+
+
+//Demonstrate the use of string library functions: strlen(), strcpy(), strrev(), strcat(), strcmp() etc. using examples.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100] = "Hello";
+    char str2[100] = "World";
+    char str3[100];
+
+    // strlen(): Length of string
+    printf("Length of '%s' is %lu\n", str1, strlen(str1));
+
+    // strcpy(): Copy string
+    strcpy(str3, str1);
+    printf("After strcpy, str3 = %s\n", str3);
+
+    
+    // strcat(): Concatenate strings
+    strcat(str3, str2);
+    printf("After strcat, str3 = %s\n", str3);
+
+    // strcmp(): Compare strings
+    int cmp = strcmp(str1, str2);
+    if (cmp == 0) {
+        printf("'%s' and '%s' are equal.\n", str1, str2);
+    } else if (cmp < 0) {
+        printf("'%s' is less than '%s'.\n", str1, str2);
+    } else {
+        printf("'%s' is greater than '%s'.\n", str1, str2);
+    }
+
+    return 0;
+}
 
 
 
