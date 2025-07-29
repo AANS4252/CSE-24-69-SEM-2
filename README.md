@@ -158,6 +158,7 @@ int main() {
     }
     return 0;
 }
+
 ----------------------------------------------------------------
 
 
@@ -190,6 +191,7 @@ int main() {
     }
     return 0;
 }
+
 ----------------------------------------------------------------
 
 
@@ -222,6 +224,7 @@ int main() {
     }
     return 0;
 }
+
 ----------------------------------------------------------------
 
 //Use switch-case to display Salaam when user enters 1, Aadaab when user enters 2, Hello when user enters 3 and Incorrect Option when user enters any other number
