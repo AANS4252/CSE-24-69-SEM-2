@@ -93,7 +93,7 @@ int*ptr=&a;
     return 0;
 }
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Implicit type conversion
 #include <stdio.h>
 
@@ -106,7 +106,7 @@ int main() {
   
     return 0;
 }
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Explicit type conversion
 #include <stdio.h>
@@ -119,7 +119,7 @@ int main() {
     printf("Addition = %d", add);
     return 0;
 }
-
+----------------------------------------------------------------
 //Use if-else to check whether a number is even or odd
  #include <stdio.h>
 int main() {
@@ -135,7 +135,7 @@ int main() {
     return 0;
 }
 
-
+----------------------------------------------------------------
 
 //Use nesting of if-else to compare three numbers
 #include <stdio.h>
@@ -158,6 +158,7 @@ int main() {
     }
     return 0;
 }
+----------------------------------------------------------------
 
 
 //Find roots of a quadratic equation
@@ -189,7 +190,7 @@ int main() {
     }
     return 0;
 }
-
+----------------------------------------------------------------
 
 
 //Use if-else with relational and logical operators (grading according to percentage of a student).
@@ -221,7 +222,7 @@ int main() {
     }
     return 0;
 }
-
+----------------------------------------------------------------
 
 //Use switch-case to display Salaam when user enters 1, Aadaab when user enters 2, Hello when user enters 3 and Incorrect Option when user enters any other number
 #include <stdio.h>
@@ -248,7 +249,7 @@ int main() {
     return 0;
 }
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Array
 
 //Display contents of an integer array. 
@@ -265,7 +266,7 @@ int main() {
     }
 
 
-
+----------------------------------------------------------------
     
 
 
@@ -288,7 +289,7 @@ int main() {
 }
 
 
-
+----------------------------------------------------------------
 //Display contents of an integer array in reverse order.
 
 #include <stdio.h>
@@ -308,8 +309,7 @@ int main() {
     return 0;
 }
 
-
-
+----------------------------------------------------------------
 //Display contents of a character array. 
 
 #include <stdio.h>
@@ -321,7 +321,7 @@ int main() {
     return 0;
 }
 
-
+----------------------------------------------------------------
 
 //Input a string from the user and display the same. 
 
@@ -338,8 +338,7 @@ int main() {
     return 0;
 }  
 
-
-{OR}
+-----------------{OR}--------------------
 
 #include <stdio.h>
 
@@ -355,7 +354,7 @@ int main() {
   }
 
 
-
+----------------------------------------------------------------
 
 //Input a string from the user and find its length (without using the string library).
 
@@ -381,7 +380,7 @@ int main() {
     return 0;
 }
 
-
+----------------------------------------------------------------
 
 
 //Input a string from the user and display it in reverse order.
@@ -414,7 +413,7 @@ int main() {
 }
 
 
-
+----------------------------------------------------------------
 
 
 //Demonstrate the use of string library functions: strlen(), strcpy(), strrev(), strcat(), strcmp() etc. using examples.
@@ -456,9 +455,167 @@ int main() {
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //Loops
+    
+//Display the series: 1 2 3 4 5 .... n (using loops)
 
 
+#include <stdio.h>
+int main() {
+    int n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
 
+    for (i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+----------------------------------------------------------------
+//Display the series: n n-1 n-2 …. 3 2 1  (using loops)
+
+#include <stdio.h>
+int main() {
+    int n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = n; i >= 1; i--) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+----------------------------------------------------------------
+
+//Display all even numbers from 1 to 100.  (using loop and if)
+#include <stdio.h>
+
+int main() {
+    int i;
+    for (i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+            printf("%d ", i);
+        }
+    }
+    return 0;
+    }
+    
+    
+    ----------------------------------------------------------------
+//Find sum of series: 1 2 3 4 5 .... n 
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i, sum = 0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        sum += i;
+    }
+
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+
+----------------------------------------------------------------
+
+//Find product of series: 1 2 3 4 5 .... n .
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    unsigned long long product = 1;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        product *= i;
+    }
+
+    printf("Product = %llu\n", product);
+    return 0;
+}
+
+----------------------------------------------------------------
+
+//Finding the factorial of a number entered by the user.
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    unsigned long long fact = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0)
+        printf("Factorial not defined for negative numbers.\n");
+    else {
+        for (i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        printf("Factorial = %llu\n", fact);
+    }
+    return 0;
+}
+
+----------------------------------------------------------------
+
+//Finding all the factors of a natural number.
+#include <stdio.h>
+int main() {
+    int n, i;
+    printf("Enter a natural number: ");
+    scanf("%d", &n);
+
+    printf("Factors of %d are: ", n);
+    for (i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    return 0;
+}
+
+
+----------------------------------------------------------------
+
+//Checking whether a given number is prime.
+
+#include <stdio.h>
+
+int main() {
+    int n, i, isPrime = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        isPrime = 0;
+    } else {
+        for (i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+        printf("%d is a prime number.\n", n);
+    else
+        printf("%d is not a prime number.\n", n);
+
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 
 
 
