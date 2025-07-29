@@ -618,9 +618,136 @@ int main() {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
+  
+
+//POINTERS
+
+//Swap Two Numbers Using Call-by-Reference
+
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    printf("Before Swap: x = %d, y = %d\n", x, y);
+    swap(&x, &y);  // Passing addresses
+    printf("After Swap: x = %d, y = %d\n", x, y);
+    return 0;
+}
 
 
+----------------------------------------------------------------
+
+//Display Contents of an Array Using Pointers
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int *ptr = arr;
+
+    printf("Array elements using pointers:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(ptr + i));
+    }
+
+    return 0;
+}
+
+
+
+----------------------------------------------------------------
+
+//Display a String in Reverse Using Pointers
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[] = "pointer";
+    char *ptr = str;
+    int len = strlen(str);
+
+    printf("String in reverse: ");
+    for (int i = len - 1; i >= 0; i--) {
+        printf("%c", *(ptr + i));
+    }
+
+    return 0;
+}
+
+----------------------------------------------------------------
+//Check if a String is Palindrome Using Pointers
+
+#include <stdio.h>
+#include <string.h>
+
+int isPalindrome(char *str) {
+    char *start = str;
+    char *end = str + strlen(str) - 1;
+
+    while (start < end) {
+        if (*start != *end)
+            return 0;
+        start++;
+        end--;
+    }
+    return 1;
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    if (isPalindrome(str))
+        printf("The string is a palindrome.\n");
+    else
+        printf("The string is not a palindrome.\n");
+
+    return 0;
+}
+
+
+----------------------------------------------------------------
+
+//Sort an Integer Array Using Functions and Pointers
+
+#include <stdio.h>
+
+void sort(int *arr, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (*(arr + j) > *(arr + j + 1)) {
+                int temp = *(arr + j);
+                *(arr + j) = *(arr + j + 1);
+                *(arr + j + 1) = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {45, 23, 89, 12, 78};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    sort(arr, size);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", *(arr + i));
+    }
+
+    return 0;
+}
+
+
+ 
 
 
 
