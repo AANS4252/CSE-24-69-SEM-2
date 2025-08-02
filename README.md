@@ -746,11 +746,141 @@ int main() {
     return 0;
 }
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//STRUCTURES
+
+//Store and Display Details of a Student
+#include <stdio.h>
+
+ struct Student {
+ 	int rollNo;
+ 	char name[50];
+ 	float marks;
+ };
+
+ int main() {
+ 	struct Student s;
+ 	printf("Enter student roll number: ");
+ 	scanf("%d", &s.rollNo);
+ 	printf("Enter student name: ");
+ 	scanf(" %[^ ]", s.name);
+ 	printf("Enter student marks: ");
+ 	scanf("%f", &s.marks);
+
+ 	printf("\nStudent Details:\n");
+ 	printf("Roll No: %d\n", s.rollNo);
+ 	printf("Name   : %s\n", s.name);
+ 	printf("Marks  : %.2f\n", s.marks);
+ 	return 0;
+  
+ }
+ ----------------------------------------------------------------
 
  
+//Store and Display All Students in Tabular Format
 
+#include <stdio.h>
 
+ struct Student {
+ 	int rollNo;
+ 	char name[50];
+ 	float marks;
+ };
 
+ int main() {
+ 	int n;
+     printf("Enter number of students: ");
+ 	scanf("%d", &n);
+
+ 	struct Student s[n];
+
+ 	for (int i = 0; i < n; i++) {
+     	printf("\nEnter details of student %d:\n", i + 1);
+     	printf("Roll No: ");
+     	scanf("%d", &s[i].rollNo);
+     	printf("Name: ");
+     	scanf(" %[^
+ ]", s[i].name);
+     	printf("Marks: ");
+     	scanf("%f", &s[i].marks);
+ 	}
+
+ 	printf("\n%-10s %-20s %-10s\n", "Roll No", "Name", "Marks");
+ 	for (int i = 0; i < n; i++) {
+     	printf("%-10d %-20s %-10.2f\n", s[i].rollNo, s[i].name, s[i].marks);
+ 	}
+ 	return 0;
+ }
+
+ ----------------------------------------------------------------
+ 
+//Store and Display Employee Details
+
+#include <stdio.h>
+
+ struct Employee {
+ 	int empId;
+ 	char name[50];
+ 	char department[30];
+ 	float salary;
+ };
+
+ int main() {
+ 	struct Employee e;
+ 	printf("Enter Employee ID: ");
+ 	scanf("%d", &e.empId);
+ 	printf("Enter Employee Name: ");
+ 	scanf(" %[^
+ ]", e.name);
+ 	printf("Enter Department: ");
+ 	scanf(" %[^
+ ]", e.department);
+ 	printf("Enter Salary: ");
+ 	scanf("%f", &e.salary);
+
+ 	printf("\nEmployee Details:\n");
+ 	printf("ID     	: %d\n", e.empId);
+ 	printf("Name   	: %s\n", e.name);
+ 	printf("Department : %s\n", e.department);
+ 	printf("Salary 	: %.2f\n", e.salary);
+ 	return 0;
+ }
+
+ ----------------------------------------------------------------
+
+//File Handling – Writing to a File
+
+#include <stdio.h>
+ 
+int main() {
+    FILE *filePointer;   	// Declare a file pointer
+    char filename[100] = "output.txt";   // Name of the file
+    char text[200];      	// Text to write into the file
+ 
+    // Open the file in write mode ("w")
+    filePointer = fopen(filename, "w");
+ 
+    // Check if file opened successfully
+    if (filePointer == NULL) {
+        printf("Error: Unable to open the file.\n");
+        return 1;
+	}
+ 
+    // Ask user for input text
+	printf("Enter the text to write into the file:\n");
+    fgets(text, sizeof(text), stdin);
+ 
+    // Write to file
+    fprintf(filePointer, "%s", text);
+ 
+    // Close the file (this saves the data)
+    fclose(filePointer);
+ 
+    printf("File '%s' written and saved successfully.\n", filename);
+ 
+    return 0;
+}
 
 
 
